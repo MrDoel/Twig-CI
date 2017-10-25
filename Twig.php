@@ -40,8 +40,8 @@ class Twig
      */
     private $functions_safe = [
         'form_open', 'form_close', 'form_error', 'form_hidden', 'set_value',
-//		'form_open_multipart', 'form_upload', 'form_submit', 'form_dropdown',
-//		'set_radio',
+		'form_open_multipart', 'form_upload', 'form_submit', 'form_dropdown',
+		'set_radio','var_dump'
     ];
 
     /**
@@ -101,6 +101,7 @@ class Twig
         ];
 
         $this->config = array_merge($this->config, $params);
+        $this->addGlobal("session", $_SESSION);
     }
 
     protected function resetTwig()
